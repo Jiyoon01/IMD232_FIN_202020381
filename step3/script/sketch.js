@@ -1,6 +1,8 @@
 let fireworks = [];
+let canvasScale = 1;
 
 function setup() {
+  setCanvas();
   createCanvas(windowWidth, windowHeight);
 }
 
@@ -44,7 +46,7 @@ class Particle {
   display() {
     colorMode(HSB);
     noStroke();
-    fill(this.hue, 255, 255, this.alpha);
+    fill(this.hue, 200, 100, this.alpha);
     ellipse(this.x, this.y, this.size, this.size);
   }
 

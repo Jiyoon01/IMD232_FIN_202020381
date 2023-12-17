@@ -2,8 +2,10 @@ let particles = [];
 let canvasScale = 1;
 
 function setup() {
-  setCanvas();
+  createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 1);
+  noFill(); // fill 없애기
+  strokeWeight(2); // 스트로크 두께 설정
 }
 
 function draw() {
@@ -11,7 +13,7 @@ function draw() {
 
   if (mouseIsPressed) {
     for (let i = 0; i < 5; i++) {
-      let p = new Particle(mouseX / canvasScale, mouseY / canvasScale);
+      let p = new Particle(mouseX / canvasScale, mouseY);
       particles.push(p);
     }
   }
@@ -30,7 +32,7 @@ class Particle {
     this.x = x;
     this.y = y;
     this.size = random(10, 50);
-    this.color = color(random(360), 80, 80, 0.7);
+    this.color = color(random(0, 360), 80, 80, 0.7);
     this.velocity = p5.Vector.random2D().mult(random(2, 5));
     this.life = 255;
     this.waveFrequency = random(0.01, 0.1);
@@ -49,8 +51,12 @@ class Particle {
   }
 
   display() {
-    noFill();
-    stroke(this.color);
+    stroke(
+      this.color.levels[0],
+      this.color.levels[1],
+      this.color.levels[2],
+      this.life
+    );
     beginShape();
     for (let i = 0; i < 360; i += 10) {
       let radius =
@@ -65,6 +71,12 @@ class Particle {
 
   isFinished() {
     return this.life <= 0;
+  }
+}
+
+function mouseMoved() {
+  for (let i = 0; i < circles.length; i++) {
+    circles[i].flash();
   }
 }
 

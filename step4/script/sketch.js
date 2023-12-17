@@ -1,7 +1,9 @@
 let bolts = [];
 let particles = [];
+let canvasScale = 1;
 
 function setup() {
+  setCanvas();
   createCanvas(windowWidth, windowHeight);
   strokeWeight(3);
 }
