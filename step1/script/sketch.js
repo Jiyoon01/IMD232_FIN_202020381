@@ -4,7 +4,7 @@ let prevMouseY;
 let canvasScale = 1;
 
 function setup() {
-  setCanvas();
+  createCanvas(windowWidth, windowHeight);
   noStroke();
   prevMouseX = mouseX;
   prevMouseY = mouseY;
