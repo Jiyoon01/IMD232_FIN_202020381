@@ -1,4 +1,4 @@
-let particles = [];
+let particles = []; // 원들이 물결처럼 부드럽게 움직이는 부분들은 챗gpt의 도움을 받았습니다.
 let canvasScale = 1;
 
 function setup() {

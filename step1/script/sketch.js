@@ -1,4 +1,4 @@
-let circles = [];
+let circles = []; // 마우스를 움직였을때 색상전환이 되면서 멈추는 모션은 챗gpt를 활용하여 작업하였습니다.
 let prevMouseX;
 let prevMouseY;
 let canvasScale = 1;

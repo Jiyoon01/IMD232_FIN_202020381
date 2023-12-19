@@ -1,4 +1,4 @@
-let fireworks = [];
+let fireworks = []; // 마우스의 움직임에 따라 다수의 입자가 생성되어 폭죽처럼 표현되는 시각적 효과를 구현한 것인데 챗gpt의 도움을 받아 작업하였습니다.
 let canvasScale = 1;
 
 function setup() {
@@ -51,7 +51,7 @@ class Particle {
   }
 
   isFinished() {
-    return this.alpha <= 0;
+    return this.alpha <= 0; // 'isFinished' 메서드를 사용하여 파티클이 모두 소멸되면 해당 폭죽을 'fireworks' 배열에서 제거하는 방법입니다.
   }
 }
 
